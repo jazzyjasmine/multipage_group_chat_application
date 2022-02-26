@@ -1,0 +1,45 @@
+<html>
+<head>
+  <title>Watch Party Chat #{{chat_id}}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+  <script src="/static/script.js"></script>
+</head>
+<body onload="authenticate()">
+
+<div class="header">
+  <h2><a href="/">Watch Party</a></h2>
+  <invite>
+    <p>Invite users to this chat at:</p>
+    <a href="#" id="invite link">http://127.0.0.1:5000/chat/{{chat_id}}?magic_passphrase={{magic_passphrase}}</a>
+  </invite>
+</div>
+
+<div class="clip">
+<div class="container">
+
+  <div class="chat">
+    <div class="comment_box">
+        <label for="comment">What do you have to say?</label>
+        <textarea id="comment" name="comment"></textarea>
+        <button value="Post" onclick="postMessage()">Post</button>
+    </div>
+    <div class="messages">
+<!--      <message>-->
+<!--        <author>Mr Chatterworth</author>-->
+<!--        <content>Chat chat chat</content>-->
+<!--      </message>-->
+    </div>
+  </div>
+
+</div>
+</div>
+
+<script>
+startMessagePolling();
+</script>
+
+</body>
+</html>
